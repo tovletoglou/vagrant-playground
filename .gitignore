@@ -1,0 +1,18 @@
+# Vagrant folders.
+# If you configure the Environmental Variable: `VAGRANT_DOTFILE_PATH` to a
+# different path change the `.gitignore` accordingly. I use:
+# VAGRANT_DOTFILE_PATH=.vagrant-home (on my home PC)
+# VAGRANT_DOTFILE_PATH=.vagrant-work (on my workstation)
+.vagrant*
+
+# SSH keys and directory
+.ssh/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
