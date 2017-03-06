@@ -1,6 +1,6 @@
 # Vagrant Playground
 
-This is a Vagrant blueprint that create an Ansible VM server and one or more VMs as playground.
+This is a Vagrant blueprint that creates an Ansible VM server and one or more VMs as playground.
 
 It is using static IP, private network and the same SSH key to all VMs. This way we can SSH seamlessly from one VM to another.<br>
 Also, updates hosts file to use the hostnames of the VMs by using the `vagrant-hostmanager` plugin. This apply both on host PC and on VMs<br>
@@ -42,7 +42,7 @@ Finally, it will update the `hosts` file of your computer, and it will do the sa
 
   ```
   vm_array = Array[
-   # ['teamcity.local',    '192.168.33.90'],
+   # ['teamcity.local',    '192.168.33.100'],
    # ['swagger.local',    '192.168.33.90'],
    ['aegir.local',     '192.168.33.80'],
    # ['web1.local',      '192.168.33.70'],

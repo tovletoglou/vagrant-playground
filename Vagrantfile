@@ -15,7 +15,7 @@
 #
 # Comment/Uncomment the servers you like to boot. But always keep the `ansible.local`.
 vm_array = Array[
-  # ['teamcity.local',    '192.168.33.90'],
+  # ['teamcity.local',    '192.168.33.100'],
   # ['swagger.local',    '192.168.33.90'],
   # ['aegir.local',     '192.168.33.80'],
   # ['web1.local',      '192.168.33.70'],
