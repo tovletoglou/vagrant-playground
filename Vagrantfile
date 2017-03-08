@@ -20,8 +20,8 @@
 # The same applies on all Vagrant command (vagrant destroy VM_NAME) more info:
 # https://www.vagrantup.com/docs/multi-machine/
 vm_array = Array[
-  # ['teamcity.local',    '192.168.33.100'],
-  # ['swagger.local',    '192.168.33.90'],
+  # ['teamcity.local',  '192.168.33.100'],
+  # ['swagger.local',   '192.168.33.90'],
   # ['aegir.local',     '192.168.33.80'],
   # ['web1.local',      '192.168.33.70'],
   # ['web2.local',      '192.168.33.71'],

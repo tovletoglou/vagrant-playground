@@ -42,9 +42,9 @@ Finally, it will update the `hosts` file of your computer, and it will do the sa
 
   ```
   vm_array = Array[
-   # ['teamcity.local',    '192.168.33.100'],
-   # ['swagger.local',    '192.168.33.90'],
-   ['aegir.local',     '192.168.33.80'],
+   # ['teamcity.local',  '192.168.33.100'],
+   # ['swagger.local',   '192.168.33.90'],
+   # ['aegir.local',     '192.168.33.80'],
    # ['web1.local',      '192.168.33.70'],
    # ['web2.local',      '192.168.33.71'],
    # ['web3.local',      '192.168.33.72'],
