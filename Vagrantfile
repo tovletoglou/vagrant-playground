@@ -14,6 +14,11 @@
 # Be careful with the private IPs not conflict with other static IPs.
 #
 # Comment/Uncomment the servers you like to boot. But always keep the `ansible.local`.
+# We keep all the servers commented (except ansible.local) to avoid a vagrant up
+# that will boot all the VMs! If you like to uncomment everything you can still
+# be able to selectively boot VMs by `vagrant up VM_NAME` like `vagrant up aegir`.
+# The same applies on all Vagrant command (vagrant destroy VM_NAME) more info:
+# https://www.vagrantup.com/docs/multi-machine/
 vm_array = Array[
   # ['teamcity.local',    '192.168.33.100'],
   # ['swagger.local',    '192.168.33.90'],
