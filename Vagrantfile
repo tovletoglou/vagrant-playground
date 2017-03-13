@@ -130,7 +130,7 @@ end
 # Vagrant configuration
 # ------------------------------------------------------------------------------
 
-Vagrant.require_version '>= 1.9.1'
+Vagrant.require_version '>= 1.9.2'
 
 Vagrant.configure('2') do |config|
   # ----------------------------------------------------------------------------
@@ -154,14 +154,6 @@ Vagrant.configure('2') do |config|
                           '/vagrant',
                           type: 'vboxsf',
                           disabled: true
-
-  # ----------------------------------------------------------------------------
-  # Shell provision to restart clients' network (apply to all VMs)
-  # ----------------------------------------------------------------------------
-  config.vm.provision 'shell',
-                      run: 'always',
-                      name: 'Restart network (fix Vagrant 1.9.1 bug with Centos 7 network)',
-                      inline: 'systemctl restart network'
 
   # ----------------------------------------------------------------------------
   # SSH configuration (apply to all VMs)
