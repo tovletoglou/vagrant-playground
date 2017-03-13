@@ -43,19 +43,6 @@ vm_array = Array[
 my_public_ssh_key = "#{Dir.home}/.ssh/id_rsa.pub"
 
 # ------------------------------------------------------------------------------
-# Welcome message
-# ------------------------------------------------------------------------------
-
-# We print this message on every vagrant command. Comment out to disable.
-print "\nVagrant VMs list:\n"
-print "------------------------------\n"
-print "hostname\tIP\t\tSSH key\n"
-vm_array.each do |x|
-  print x[0] + "\t" + x[1] + "\t" + Dir.pwd + '/' + ENV['VAGRANT_DOTFILE_PATH'] + '/machines/' + x[0].chomp('.local') + '/virtualbox/private_key' + "\n"
-end
-print "------------------------------\n\n"
-
-# ------------------------------------------------------------------------------
 # Detect if SSH command exists
 # ------------------------------------------------------------------------------
 
