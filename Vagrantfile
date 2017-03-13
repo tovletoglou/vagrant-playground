@@ -20,22 +20,29 @@
 # The same applies on all Vagrant command (vagrant destroy VM_NAME) more info:
 # https://www.vagrantup.com/docs/multi-machine/
 vm_array = Array[
-  # ['teamcity.local',  '192.168.33.100'],
-  # ['swagger.local',   '192.168.33.90'],
-  # ['aegir.local',     '192.168.33.80'],
-  # ['web1.local',      '192.168.33.70'],
-  # ['web2.local',      '192.168.33.71'],
-  # ['web3.local',      '192.168.33.72'],
-  # ['galera1.local',   '192.168.33.60'],
-  # ['galera2.local',   '192.168.33.61'],
-  # ['galera3.local',   '192.168.33.62'],
-  # ['elastic.local',   '192.168.33.40'],
-  # ['scrapy.local',    '192.168.33.30'],
-  # ['haproxy.local',   '192.168.33.50'],
-  # ['theseus.local',   '192.168.33.20'],
-  # ['jason.local',     '192.168.33.21'],
-  # ['asklepios.local', '192.168.33.22'],
-  ['ansible.local',   '192.168.33.10']
+  ['ansible.local',   '192.168.33.10'],
+
+  # ['aegir.local',     '192.168.33.20'],
+  #
+  # ['haproxy.local',   '192.168.33.30'],
+  #
+  # ['web1.local',      '192.168.33.31'],
+  # ['web2.local',      '192.168.33.32'],
+  # ['web3.local',      '192.168.33.33'],
+  #
+  # ['galera1.local',   '192.168.33.41'],
+  # ['galera2.local',   '192.168.33.42'],
+  # ['galera3.local',   '192.168.33.43'],
+  #
+  # ['elastic1.local',  '192.168.33.51'],
+  # ['elastic2.local',  '192.168.33.52'],
+  # ['elastic3.local',  '192.168.33.53'],
+  #
+  # ['scrapy.local',    '192.168.33.60'],
+  #
+  # ['teamcity.local',  '192.168.33.70'],
+  #
+  # ['swagger.local',   '192.168.33.80']
 ]
 
 # Personal SSH key, add the path for your id_rsa.pub
