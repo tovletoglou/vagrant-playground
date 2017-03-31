@@ -277,8 +277,8 @@ Vagrant.configure('2') do |config|
       node.vm.post_up_message = "
       -------------------------
       `#{vm_current[0].chomp('.local')}` server is ready
-      IP:       #{vm_current[0]}
-      Hostname: #{vm_current[1]}
+      Hostname: #{vm_current[0]}
+      IP:       #{vm_current[1]}
       Login:    #{login_string[0]}
                 #{login_string[1]}
                 #{login_string[2]}
