@@ -42,7 +42,9 @@ vm_array = Array[
   #
   # ['teamcity.local',  '192.168.33.70'],
   #
-  # ['swagger.local',   '192.168.33.80']
+  # ['swagger.local',   '192.168.33.80'],
+  #
+  # ['wordpress.local', '192.168.33.90']
 ]
 
 # Personal SSH key, add the path for your id_rsa.pub
