@@ -24,70 +24,72 @@ Finally, it will update the `hosts` file of your computer, and it will do the sa
 
 ## Get started
 
-1. Install `vagrant-hostmanager` plugin
+Install `vagrant-hostmanager` plugin
 
-  ```
-  vagrant plugin install vagrant-hostmanager
-  ```
+```shell
+vagrant plugin install vagrant-hostmanager
+```
 
-2. Clone the project and cd in
+Clone the project and cd in
 
-  ```
-  git clone https://github.com/tovletoglou/vagrant-playground.git
-  cd vagrant-playground
-  ```
+```shell
+git clone https://github.com/tovletoglou/vagrant-playground.git
+cd vagrant-playground
+```
 
-3. Edit the `Vagrantfile` and uncomment the server/s you like to boot (always keep the `ansible.local`).<br>
+Edit the `Vagrantfile` and uncomment the server/s you like to boot (always keep the `ansible.local`).<br>
   The next example boots the `ansible.local` and the `aegir.local`
 
-  ```
-  vm_array = Array[
-   # ['teamcity.local',  '192.168.33.100'],
-   # ['swagger.local',   '192.168.33.90'],
-   # ['aegir.local',     '192.168.33.80'],
-   # ['web1.local',      '192.168.33.70'],
-   # ['web2.local',      '192.168.33.71'],
-   # ['web3.local',      '192.168.33.72'],
-   # ['galera1.local',   '192.168.33.60'],
-   # ['galera2.local',   '192.168.33.61'],
-   # ['galera3.local',   '192.168.33.62'],
-   # ['elastic.local',   '192.168.33.40'],
-   # ['scrapy.local',    '192.168.33.30'],
-   # ['haproxy.local',   '192.168.33.50'],
-   # ['theseus.local',   '192.168.33.20'],
-   # ['jason.local',     '192.168.33.21'],
-   # ['asklepios.local', '192.168.33.22'],
-   ['ansible.local',   '192.168.33.10']
-  ]
-  ```
-4. It's time to boot up the VMs and wait...
+```ruby
+vm_array = Array[
+  # ['teamcity.local',  '192.168.33.100'],
+  # ['swagger.local',   '192.168.33.90'],
+  # ['aegir.local',     '192.168.33.80'],
+  # ['web1.local',      '192.168.33.70'],
+  # ['web2.local',      '192.168.33.71'],
+  # ['web3.local',      '192.168.33.72'],
+  # ['galera1.local',   '192.168.33.60'],
+  # ['galera2.local',   '192.168.33.61'],
+  # ['galera3.local',   '192.168.33.62'],
+  # ['elastic.local',   '192.168.33.40'],
+  # ['scrapy.local',    '192.168.33.30'],
+  # ['haproxy.local',   '192.168.33.50'],
+  # ['theseus.local',   '192.168.33.20'],
+  # ['jason.local',     '192.168.33.21'],
+  # ['asklepios.local', '192.168.33.22'],
+  ['ansible.local',   '192.168.33.10']
+]
+```
 
-  ```
-  vagrant up
-  ```
+It's time to boot up the VMs and wait...
 
-5. Login to `ansible.local` VM by:
+```shell
+vagrant up
+```
 
-  ```
-  ssh vagrant@ansible.local
-  ```
+Login to `ansible.local` VM by:
 
-6. Go to the ansible master playbook:
+```shell
+ssh vagrant@ansible.local
+```
 
-  ```
-  cd ansible-playbook-vagrant-playground
-  ```
+Go to the ansible master playbook:
 
-7. Run the initial playbooks `playbook_ansible` and `playbook_vagrant`:
+```shell
+cd ansible-playbook-vagrant-playground
+```
 
-  ```
-  ansible-playbook -i hosts playbook_ansible.yml
-  ansible-playbook -i hosts playbook_vagrant.yml
-  ```
+Run the initial playbooks `playbook_ansible` and `playbook_vagrant`:
 
-8. And finally the playbook for the server you want to try. For this example we use the `playbook_aegir`:
+```shell
+ansible-playbook -i hosts playbook_ansible.yml
+ansible-playbook -i hosts playbook_vagrant.yml
+```
 
-  ```
-  ansible-playbook -i hosts playbook_aegir.yml
-  ```
-  Now you have and Aegir server to play under `192.168.33.80` and `aegir.local`.
+And finally the playbook for the server you want to try. For this example we use the `playbook_aegir`:
+
+```shell
+ansible-playbook -i hosts playbook_aegir.yml
+```
+
+Now you have and Aegir server to play under `192.168.33.80` and `aegir.local`.
