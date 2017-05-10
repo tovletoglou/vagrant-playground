@@ -44,7 +44,7 @@ vm_array = Array[
   #
   # ['swagger.local',   '192.168.33.80'],
   #
-  # ['wordpress.local', '192.168.33.90']
+  # ['wordpress.local', '192.168.33.90'],
 ]
 
 # Personal SSH key, add the path for your id_rsa.pub

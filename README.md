@@ -1,6 +1,6 @@
 # Vagrant Playground
 
-This is a Vagrant blueprint that creates an Ansible VM server and one or more VMs as playground.
+This is a Vagrant blueprint that creates an Ansible VM server and one or more VMs as a playground.
 
 It is using static IP, private network and the same SSH key to all VMs. This way we can SSH seamlessly from one VM to another.<br>
 Also, updates hosts file to use the hostnames of the VMs by using the `vagrant-hostmanager` plugin. This apply both on host PC and on VMs<br>
@@ -38,26 +38,35 @@ cd vagrant-playground
 ```
 
 Edit the `Vagrantfile` and uncomment the server/s you like to boot (always keep the `ansible.local`).<br>
-  The next example boots the `ansible.local` and the `aegir.local`
+The next example boots the `ansible.local` and the `aegir.local`
 
 ```ruby
 vm_array = Array[
-  # ['teamcity.local',  '192.168.33.100'],
-  # ['swagger.local',   '192.168.33.90'],
-  # ['aegir.local',     '192.168.33.80'],
-  # ['web1.local',      '192.168.33.70'],
-  # ['web2.local',      '192.168.33.71'],
-  # ['web3.local',      '192.168.33.72'],
-  # ['galera1.local',   '192.168.33.60'],
-  # ['galera2.local',   '192.168.33.61'],
-  # ['galera3.local',   '192.168.33.62'],
-  # ['elastic.local',   '192.168.33.40'],
-  # ['scrapy.local',    '192.168.33.30'],
-  # ['haproxy.local',   '192.168.33.50'],
-  # ['theseus.local',   '192.168.33.20'],
-  # ['jason.local',     '192.168.33.21'],
-  # ['asklepios.local', '192.168.33.22'],
-  ['ansible.local',   '192.168.33.10']
+  ['ansible.local',   '192.168.33.10'],
+
+  ['aegir.local',     '192.168.33.20'],
+  #
+  # ['haproxy.local',   '192.168.33.30'],
+  #
+  # ['web1.local',      '192.168.33.31'],
+  # ['web2.local',      '192.168.33.32'],
+  # ['web3.local',      '192.168.33.33'],
+  #
+  # ['galera1.local',   '192.168.33.41'],
+  # ['galera2.local',   '192.168.33.42'],
+  # ['galera3.local',   '192.168.33.43'],
+  #
+  # ['elastic1.local',  '192.168.33.51'],
+  # ['elastic2.local',  '192.168.33.52'],
+  # ['elastic3.local',  '192.168.33.53'],
+  #
+  # ['scrapy.local',    '192.168.33.60'],
+  #
+  # ['teamcity.local',  '192.168.33.70'],
+  #
+  # ['swagger.local',   '192.168.33.80'],
+  #
+  # ['wordpress.local', '192.168.33.90'],
 ]
 ```
 
@@ -67,7 +76,7 @@ It's time to boot up the VMs and wait...
 vagrant up
 ```
 
-Login to `ansible.local` VM by:
+Login to `ansible.local` VM. It will use your private SSH key stored under your `HOME_DIR/.ssh`:
 
 ```shell
 ssh vagrant@ansible.local
@@ -82,7 +91,9 @@ cd ansible-playbook-vagrant-playground
 Run the initial playbooks `playbook_ansible` and `playbook_vagrant`:
 
 ```shell
+# This playbook will download all the roles used by the included playbooks.
 ansible-playbook -i hosts playbook_ansible.yml
+# This one will initialize the running VMs. It's not necessary.
 ansible-playbook -i hosts playbook_vagrant.yml
 ```
 
@@ -92,4 +103,16 @@ And finally the playbook for the server you want to try. For this example we use
 ansible-playbook -i hosts playbook_aegir.yml
 ```
 
-Now you have and Aegir server to play under `192.168.33.80` and `aegir.local`.
+Now you have and Aegir server to play under `192.168.33.20` or `aegir.local`.
+
+## Known issues
+
+On Windows systems the hostmanager plugin cannot update the hosts file. If you are experiencing a Ruby error like:
+
+```shell
+C:/HashiCorp/Vagrant/embedded/lib/ruby/2.2.0/fileutils.rb:1392:in `initialize': Permission denied @ rb_sysopen - C:/Users/USER/.vagrant.d/tmp/hosts.local (Errno::EACCES)
+```
+
+go to the `Vagrantfile` and change the `config.hostmanager.manage_host = true` to `false`.
+
+Then edit manually your `hosts` file under `C:\Windows\System32\drivers\etc`.
