@@ -8,6 +8,9 @@
 # SSH keys and directory
 .ssh/
 
+# IDEs
+.vscode/
+
 # OS generated files
 .DS_Store
 .DS_Store?
