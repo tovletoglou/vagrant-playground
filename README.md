@@ -105,6 +105,21 @@ ansible-playbook -i hosts playbook_aegir.yml
 
 Now you have and Aegir server to play under `192.168.33.20` or `aegir.local`.
 
+## Cheat sheet
+
+Mount the VMs (on a Linux system)
+
+```shell
+mkdir ~/vagrant@ansible.local/
+sshfs -o allow_other vagrant@ansible.local:/ ~/vagrant@ansible.local/
+
+mkdir ~/vagrant@aegir.local
+sshfs -o allow_other vagrant@aegir.local:/ ~/vagrant@aegir.local/
+
+mkdir ~/vagrant@web1.local
+sshfs -o allow_other vagrant@web1.local:/ ~/vagrant@web1.local/
+```
+
 ## Known issues
 
 On Windows systems the hostmanager plugin cannot update the hosts file. If you are experiencing a Ruby error like:
