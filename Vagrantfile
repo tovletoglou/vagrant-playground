@@ -45,6 +45,8 @@ vm_array = Array[
   # ['swagger.local',   '192.168.33.80'],
   #
   # ['wordpress.local', '192.168.33.90'],
+  #
+  # ['drupal.local', '192.168.33.100'],
 ]
 
 # Personal SSH key, add the path for your id_rsa.pub
@@ -157,6 +159,10 @@ Vagrant.configure('2') do |config|
                           type: 'vboxsf',
                           disabled: true
 
+  # config.vm.synced_folder '.',
+  #                         '/vagrant',
+  #                         type: 'nfs',
+  #                         mount_options: ['dmode=775','fmode=664']
   # ----------------------------------------------------------------------------
   # SSH configuration (apply to all VMs)
   # ----------------------------------------------------------------------------
